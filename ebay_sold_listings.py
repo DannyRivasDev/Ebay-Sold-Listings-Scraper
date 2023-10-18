@@ -4,7 +4,8 @@ import re
 
 search_link = input("Input the eBay link: ")
 
-# Example Link: https://www.ebay.com/sch/i.html?_nkw=gameboy+advance+console&_sacat=0&rt=nc&LH_Sold=1&LH_Complete=1&_pgn=1
+# Example Link: https://www.ebay.com/sch/i.html?_nkw=gameboy+advance+console&_sacat=0&rt=nc&LH_Sold=1&LH_Complete=1
+
 
 price_list = []
 f = open("Sold_listings.txt", "w")
