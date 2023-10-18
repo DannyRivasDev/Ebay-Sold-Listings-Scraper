@@ -2,21 +2,20 @@ from bs4 import BeautifulSoup
 import requests
 import re
 
-# search_link = input("Input the ebay link: ")
+search_link = input("Input the eBay link: ")
 
 # Example Link: https://www.ebay.com/sch/i.html?_nkw=gameboy+advance+console&_sacat=0&rt=nc&LH_Sold=1&LH_Complete=1&_pgn=1
 
 price_list = []
 f = open("Sold_listings.txt", "w")
 for i in range(2)[1:]:
-    url = f"https://www.ebay.com/sch/i.html?_nkw=megaman+battle+network+2&_sacat=0&rt=nc&LH_Sold=1&LH_Complete=1&_pgn={i}"
+    url = f"{search_link}&_pgn={i}"
     page = requests.get(url).text
     doc = BeautifulSoup(page, "html.parser")
 
-    page = doc.find(class_ = "srp-results srp-list clearfix")
+    page = doc.find(class_="srp-results srp-list clearfix")
 
-    listings = page.find_all("li", class_ = "s-item s-item__pl-on-bottom")
-
+    listings = page.find_all("li", class_="s-item s-item__pl-on-bottom")
 
     for item in listings:
         title= item.find(class_ = "s-item__title").string
