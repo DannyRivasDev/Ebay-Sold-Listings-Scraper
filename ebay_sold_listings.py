@@ -19,8 +19,8 @@ for i in range(2)[1:]:
     listings = page.find_all("li", class_="s-item s-item__pl-on-bottom")
 
     for item in listings:
-        title= item.find(class_ = "s-item__title").string
-        price = item.find(class_ = "s-item__price").string
+        title= item.find(class_ = "s-item__title").text
+        price = item.find(class_ = "s-item__price").text
         date = item.find(class_ = "POSITIVE").string
         link = item.find(class_ = "s-item__link")['href'].split("?")[0]
         
@@ -44,12 +44,16 @@ for i in range(2)[1:]:
 
 # print(price_list)
 price_list = list(set(price_list))
-f.write(f"Highest Price: {max(price_list)}\n")
-f.write(f"Lowest Price: {min(price_list)}\n")
-f.write(f"Average Price: {round(sum(price_list) / len(price_list), 2)}\n")
 
-print("Highest Price:", max(price_list))
-print("Lowest Price:", min(price_list))
-print("Average Price:", round(sum(price_list) / len(price_list), 2))
+if price_list:
+    f.write(f"Highest Price: {max(price_list)}\n")
+    f.write(f"Lowest Price: {min(price_list)}\n")
+    f.write(f"Average Price: {round(sum(price_list) / len(price_list), 2)}\n")
+
+    print("Highest Price:", max(price_list))
+    print("Lowest Price:", min(price_list))
+    print("Average Price:", round(sum(price_list) / len(price_list), 2))
+else:
+    print("No items found matching the criteria.")
 
 f.close()
