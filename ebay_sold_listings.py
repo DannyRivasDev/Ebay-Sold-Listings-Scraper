@@ -2,15 +2,18 @@ from bs4 import BeautifulSoup
 import requests
 import re
 
-search_link = input("Input the eBay link: ")
+# search_link = input("Input the eBay link: ")
+search_item = input("Input the eBay item: ")
+search_item = search_item.split(" ")
+search_item = ("+").join(search_item)
 
 # Example Link: https://www.ebay.com/sch/i.html?_nkw=gameboy+advance+console&_sacat=0&rt=nc&LH_Sold=1&LH_Complete=1
-
+# Example item: game boy advance
 
 price_list = []
 f = open("Sold_listings.txt", "w")
 for i in range(2)[1:]:
-    url = f"{search_link}&_pgn={i}"
+    url = f"https://www.ebay.com/sch/i.html?_nkw={search_item}&_sacat=0&rt=nc&LH_Sold=1&LH_Complete=1&_pgn={i}"
     page = requests.get(url).text
     doc = BeautifulSoup(page, "html.parser")
 
@@ -30,11 +33,11 @@ for i in range(2)[1:]:
         f.write(f"Link: {link}\n")
         f.write("---\n")
 
-        print("Title:", title)
-        print("Price:", price)
-        print("Date:", date)
-        print("Link:", link)
-        print("---")
+        # print("Title:", title)
+        # print("Price:", price)
+        # print("Date:", date)
+        # print("Link:", link)
+        # print("---")
 
         if price != None:
             price = price[1:]
