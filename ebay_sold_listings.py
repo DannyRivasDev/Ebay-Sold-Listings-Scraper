@@ -30,11 +30,11 @@ for i in range(2)[1:]:
         f.write(f"Link: {link}\n")
         f.write("---\n")
 
-        print("Title:", title)
-        print("Price:", price)
-        print("Date:", date)
-        print("Link:", link)
-        print("---")
+        # print("Title:", title)
+        # print("Price:", price)
+        # print("Date:", date)
+        # print("Link:", link)
+        # print("---")
 
         if price != None:
             price = price[1:]
