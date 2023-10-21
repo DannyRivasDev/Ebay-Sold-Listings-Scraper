@@ -8,7 +8,7 @@ search_item = search_item.split(" ")
 search_item = ("+").join(search_item)
 
 # Example Link: https://www.ebay.com/sch/i.html?_nkw=gameboy+advance+console&_sacat=0&rt=nc&LH_Sold=1&LH_Complete=1
-# Example item: game boy advance
+# Example item: game boy advance 
 
 price_list = []
 f = open("Sold_listings.txt", "w")
