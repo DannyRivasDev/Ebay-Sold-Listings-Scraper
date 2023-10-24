@@ -1,2 +1,2 @@
 # Ebay-Sold-Listings
-A script using Beautiful Soup to get data on sold Ebay listings
+A script using Beautiful Soup to get data on sold Ebay listings when an item is input.
