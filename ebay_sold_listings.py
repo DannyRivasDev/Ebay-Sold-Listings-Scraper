@@ -12,7 +12,7 @@ search_item = ("+").join(search_item)
 
 price_list = []
 f = open("Sold_listings.txt", "w")
-for i in range(2)[1:]:
+for i in range(3)[1:]:
     url = f"https://www.ebay.com/sch/i.html?_nkw={search_item}&_sacat=0&rt=nc&LH_Sold=1&LH_Complete=1&_pgn={i}"
     page = requests.get(url).text
     doc = BeautifulSoup(page, "html.parser")
