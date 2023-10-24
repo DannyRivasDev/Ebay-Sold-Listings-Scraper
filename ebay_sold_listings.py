@@ -40,8 +40,10 @@ for i in range(3)[1:]:
         # print("---")
 
         if price != None:
-            price = price[1:]
-            price = price.replace(",", "")
+            price = price.replace("$", "")
+            if 'to' in price:
+                price = sum([float(num) for num in price.split() if num != 'to']) / 2
+                price = round(price, 2)
             if float(price) < 200:
                 price_list.append(float(price))
 
