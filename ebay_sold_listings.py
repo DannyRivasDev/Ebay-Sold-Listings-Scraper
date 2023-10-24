@@ -2,7 +2,6 @@ from bs4 import BeautifulSoup
 import requests
 import re
 
-# search_link = input("Input the eBay link: ")
 search_item = input("Input the eBay item: ")
 search_item = search_item.split(" ")
 search_item = ("+").join(search_item)
@@ -47,7 +46,6 @@ for i in range(3)[1:]:
             if float(price) < 500:
                 price_list.append(float(price))
 
-# print(price_list)
 price_list = list(set(price_list))
 
 if price_list:
