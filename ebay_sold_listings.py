@@ -44,7 +44,7 @@ for i in range(3)[1:]:
             if 'to' in price:
                 price = sum([float(num) for num in price.split() if num != 'to']) / 2
                 price = round(price, 2)
-            if float(price) < 200:
+            if float(price) < 500:
                 price_list.append(float(price))
 
 # print(price_list)
