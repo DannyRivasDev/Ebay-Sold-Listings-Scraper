@@ -36,7 +36,7 @@ This Python script allows you to scrape sold listings from eBay based on a user-
 
 - Make sure to have the necessary libraries (`requests` and `BeautifulSoup`) installed in your Python environment.
 - This script is set to scrape data from three pages. You can adjust the range as needed.
-- The script assumes a maximum price of $500 for the price range.
+- The script assumes a maximum price of $500 for the price range. You can adjust the maxiumum price as needed.
 
 ## Disclaimer
 
