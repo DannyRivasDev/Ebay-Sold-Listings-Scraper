@@ -1,6 +1,5 @@
 from bs4 import BeautifulSoup
 import requests
-import re
 
 search_item = input("Input the eBay item: ")
 search_item = search_item.split(" ")
@@ -10,6 +9,7 @@ search_item = ("+").join(search_item)
 
 price_list = []
 f = open("Sold_listings.txt", "w")
+# The range of pages starting at page 1
 for i in range(3)[1:]:
     url = f"https://www.ebay.com/sch/i.html?_nkw={search_item}&_sacat=0&rt=nc&LH_Sold=1&LH_Complete=1&_pgn={i}"
     page = requests.get(url).text
@@ -42,6 +42,7 @@ for i in range(3)[1:]:
             if 'to' in price:
                 price = sum([float(num) for num in price.split() if num != 'to']) / 2
                 price = round(price, 2)
+            # Max amount for the price range
             if float(price) < 500:
                 price_list.append(float(price))
 
